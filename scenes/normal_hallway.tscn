@@ -111,9 +111,9 @@ transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, 0.000471
 shape = SubResource("BoxShape3D_jfuvf")
 
 [node name="SpawnPoint" type="Marker3D" parent="Triggers"]
-transform = Transform3D(0.109353, 0, 0.994003, 0, 1, 0, -0.994003, 0, 0.109353, -1.24222, 0.696017, 3.26033)
+transform = Transform3D(0.109353, 0, 0.994003, 0, 1, 0, -0.994003, 0, 0.109353, 3.16063, 0.696017, 3.22921)
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(0.00364775, 0, -0.999993, 0, 1, 0, 0.999993, 0, 0.00364775, 4.56081, 1.66662, -7.09338)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.56081, 1.66662, -7.09338)
 text = "<- No anomaly - Anomaly ->"
 font_size = 62

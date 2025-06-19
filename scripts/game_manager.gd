@@ -12,6 +12,9 @@ extends Node
 # The "perfect" corridor scene with no anomalies.
 @export var normal_scene: PackedScene = preload("res://scenes/normal_hallway.tscn")
 
+# The tutorial hallway scene to show on first run
+@export var tutorial_scene: PackedScene = preload("res://scenes/tutorial_hallway.tscn")
+
 # An array to hold all your anomaly scenes.
 @export var anomaly_scenes: Array[PackedScene] = [
 	preload("res://scenes/two_lockers_hallway.tscn"),
@@ -37,6 +40,7 @@ var current_loop_instance: Node = null
 var current_loop_is_anomalous: bool = false
 var current_loop_counter: int = 0
 var is_handling_choice: bool = false
+var tutorial_shown: bool = false
 
 
 # Called once when the AutoLoad is initialized at the start of the game.
@@ -70,14 +74,25 @@ func start_new_loop():
 	if is_instance_valid(current_loop_instance):
 		current_loop_instance.queue_free()
 
-	# 2. Decide if the next loop will have an anomaly.
-	current_loop_is_anomalous = randf() < anomaly_chance
-
+	# 2. Decide which scene to load
 	var scene_to_load: PackedScene
-	if current_loop_is_anomalous:
-		scene_to_load = anomaly_scenes.pick_random()
+
+	# Show tutorial on first loop if not shown already
+	if not tutorial_shown:
+		scene_to_load = tutorial_scene
+		tutorial_shown = true
+		current_loop_is_anomalous = false
 	else:
-		scene_to_load = normal_scene
+		# Original logic for normal/anomaly scenes
+		if current_loop_counter == 0:
+			current_loop_is_anomalous = false
+		else:
+			current_loop_is_anomalous = randf() < anomaly_chance
+
+		if current_loop_is_anomalous:
+			scene_to_load = anomaly_scenes.pick_random()
+		else:
+			scene_to_load = normal_scene
 
 	# 3. Instantiate the chosen scene and add it as a child of the current scene's root.
 	# This makes sure the corridor is added to the "Main" scene, not to the GameManager itself.
@@ -95,7 +110,7 @@ func start_new_loop():
 	var spawn_point = current_loop_instance.get_node("Triggers/SpawnPoint")
 	player.global_transform = spawn_point.global_transform
 	player.sync_rotation()
-	
+
 	# --- MODIFICATION ---
 	# The is_handling_choice flag is no longer reset here.
 	# It is now handled by the async handle_player_choice function after a delay.
@@ -146,11 +161,11 @@ func handle_player_choice(went_forward: bool):
 		current_loop_counter = 0
 		print("Incorrect! Streak reset to 0.")
 		start_new_loop()
-	
+
 	# --- MODIFICATION 2: Add a cooldown before unlocking ---
 	# Wait for a fraction of a second. This gives the engine time to process
 	# the scene change and ignore any stray, queued signals from the old trigger.
 	await get_tree().create_timer(0.2).timeout
-	
+
 	# Now that the cooldown is over, unlock the handler for the next loop.
 	is_handling_choice = false
