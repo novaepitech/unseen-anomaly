@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://78ov46o41bqo"]
+[gd_scene load_steps=10 format=3 uid="uid://78ov46o41bqo"]
 
 [ext_resource type="Texture2D" uid="uid://c4jajkexc4ohr" path="res://assets/models/M.O.C/Albedo M.O.C.png" id="1_jfuvf"]
 [ext_resource type="ArrayMesh" uid="uid://1akc1pbgxffo" path="res://assets/models/M.O.C/M.O.C.obj" id="1_wpcjn"]
@@ -21,8 +21,11 @@ size = Vector3(10.7185, 0.116699, 54.8618)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i78qv"]
 albedo_texture = ExtResource("1_jfuvf")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_otibj"]
-size = Vector3(1, 2.57178, 7.98915)
+[sub_resource type="BoxShape3D" id="BoxShape3D_wpcjn"]
+size = Vector3(0.225, 2.63, 7.14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jfuvf"]
+size = Vector3(0.225, 2.63, 7.14)
 
 [node name="NormalHallway" type="Node3D"]
 
@@ -70,8 +73,6 @@ size = Vector3(0.152466, 3.83099, 41.8913)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74763, 1.48858, -7.1227)
 size = Vector3(0.152466, 3.79352, 41.8665)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Walls"]
-
 [node name="Ceiling" type="StaticBody3D" parent="Geometry"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Ceiling"]
@@ -96,22 +97,23 @@ light_energy = 1.5
 transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -3.49458)
 
 [node name="ForwardTrigger" type="Area3D" parent="Triggers"]
-transform = Transform3D(1, 0, 9.31323e-10, 0, 1, 0, -9.31323e-10, 0, 1, 0.0221083, 0, 3.12768)
+transform = Transform3D(1, 0, 2.79397e-09, 0, 1, 0, -2.79397e-09, 0, 1, -10.6937, 0, 3.20343)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/ForwardTrigger"]
-transform = Transform3D(1, 0, 3.93018e-07, 0, 1.00008, 0, -3.93018e-07, 0, 1, -12.9759, 0.439644, 0.473458)
-shape = SubResource("BoxShape3D_otibj")
+transform = Transform3D(1, 0, 5.58794e-09, 0, 1, 0, -5.58794e-09, 0, 1, -0.0516939, 0.466667, 0.124798)
+shape = SubResource("BoxShape3D_wpcjn")
 
 [node name="BackwardTrigger" type="Area3D" parent="Triggers"]
+transform = Transform3D(1, 0, 9.31323e-10, 0, 1, 0, -9.31323e-10, 0, 1, 9.21785, 0, 3.12044)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Triggers/BackwardTrigger"]
-transform = Transform3D(1, 0, 5.07105e-07, 0, 1.00008, 0, -5.07105e-07, 0, 1, 9.97996, 0.439644, 3.43902)
-shape = SubResource("BoxShape3D_otibj")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/BackwardTrigger"]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, 0.000471115, 0.466667, 0.0666651)
+shape = SubResource("BoxShape3D_jfuvf")
 
 [node name="SpawnPoint" type="Marker3D" parent="Triggers"]
-transform = Transform3D(0.109353, 0, 0.994003, 0, 1, 0, -0.994003, 0, 0.109353, 4.42981, 0.696017, 3.22024)
+transform = Transform3D(0.109353, 0, 0.994003, 0, 1, 0, -0.994003, 0, 0.109353, -1.24222, 0.696017, 3.26033)
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(0.00364775, 0, -0.999993, 0, 1, 0, 0.999993, 0, 0.00364775, 4.56081, 1.66662, 0.0444059)
+transform = Transform3D(0.00364775, 0, -0.999993, 0, 1, 0, 0.999993, 0, 0.00364775, 4.56081, 1.66662, -7.09338)
 text = "<- No anomaly - Anomaly ->"
 font_size = 62
