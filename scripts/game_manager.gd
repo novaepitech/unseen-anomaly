@@ -38,6 +38,9 @@ extends Node
 # The player node. It will be null until the player registers itself.
 var player: CharacterBody3D = null
 
+# Track the previously shown anomaly scene to prevent repeats
+var previous_anomaly_scene: PackedScene = null
+
 var current_loop_instance: Node = null
 var current_loop_is_anomalous: bool = false
 var current_loop_counter: int = 0
@@ -92,7 +95,17 @@ func start_new_loop():
             current_loop_is_anomalous = randf() < anomaly_chance
 
         if current_loop_is_anomalous:
-            scene_to_load = anomaly_scenes.pick_random()
+            # Don't pick the same anomaly twice in a row
+            if previous_anomaly_scene != null and anomaly_scenes.size() > 1:
+                var available_anomalies = []
+                for scene in anomaly_scenes:
+                    if scene != previous_anomaly_scene:
+                        available_anomalies.append(scene)
+                scene_to_load = available_anomalies.pick_random()
+                previous_anomaly_scene = scene_to_load
+            else:
+                scene_to_load = anomaly_scenes.pick_random()
+                previous_anomaly_scene = scene_to_load
         else:
             scene_to_load = normal_scene
 
@@ -129,7 +142,6 @@ func _on_backward_trigger_entered(body: Node3D):
 
 
 # This function checks if the player's choice was correct.
-# --- MODIFICATION 1: Function is now async ---
 func handle_player_choice(went_forward: bool):
     # This flag now acts as a "lock" to prevent this function from running
     # multiple times in quick succession.
@@ -163,7 +175,6 @@ func handle_player_choice(went_forward: bool):
         print("Incorrect! Streak reset to 0.")
         start_new_loop()
 
-    # --- MODIFICATION 2: Add a cooldown before unlocking ---
     # Wait for a fraction of a second. This gives the engine time to process
     # the scene change and ignore any stray, queued signals from the old trigger.
     await get_tree().create_timer(0.2).timeout
