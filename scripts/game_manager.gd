@@ -124,11 +124,33 @@ func start_new_loop():
 
     # 5. Teleport the player to the start of the new corridor.
     var spawn_point = current_loop_instance.get_node("Triggers/SpawnPoint")
-    player.global_transform = spawn_point.global_transform
-    player.sync_rotation()
+
+    # FIXED: Proper teleportation that prevents camera stutter
+    teleport_player_to_spawn(spawn_point)
 
     var level_text_hint = current_loop_instance.get_node("Props/Door/LevelTextHint")
     level_text_hint.text = str(current_loop_counter) + "01"
+
+
+# NEW FUNCTION: Properly teleports the player without camera stutter
+func teleport_player_to_spawn(spawn_point: Node3D):
+    # Store the spawn point's transform
+    var spawn_transform = spawn_point.global_transform
+
+    # Set the player's position
+    player.global_position = spawn_transform.origin
+
+    # Set the player's Y rotation (left/right look) to match spawn point
+    player.rotation.y = spawn_transform.basis.get_euler().y
+
+    # Reset the head's X rotation (up/down look) to neutral
+    player.head.rotation.x = 0.0
+
+    # Wait one frame to ensure the transform is properly applied
+    await get_tree().process_frame
+
+    # Now sync the rotation variables to match the actual transforms
+    player.sync_rotation()
 
 
 # Called by the ForwardTrigger's signal.
