@@ -198,6 +198,12 @@ skeleton = NodePath("../../../Geometry/Floor")
 [node name="Door" parent="Props" instance=ExtResource("5_otibj")]
 transform = Transform3D(-2.98023e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.98023e-08, 4.7, 0.9, 7.1)
 
+[node name="LevelTextHint" type="Label3D" parent="Props/Door"]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -0.922344, 1.36027, 0.0680351)
+text = "101"
+font_size = 48
+outline_size = 4
+
 [node name="Triggers" type="Node3D" parent="."]
 transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -3.49458)
 

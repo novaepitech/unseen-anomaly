@@ -111,9 +111,8 @@ func start_new_loop():
     player.global_transform = spawn_point.global_transform
     player.sync_rotation()
 
-    # --- MODIFICATION ---
-    # The is_handling_choice flag is no longer reset here.
-    # It is now handled by the async handle_player_choice function after a delay.
+    var level_text_hint = current_loop_instance.get_node("Props/Door/LevelTextHint")
+    level_text_hint.text = str(current_loop_counter) + "01"
 
 
 # Called by the ForwardTrigger's signal.
