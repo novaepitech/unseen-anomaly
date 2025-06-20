@@ -12,3 +12,6 @@ export_presets.cfg
 
 # macOS system files
 .DS_Store
+
+# test output folder
+output/

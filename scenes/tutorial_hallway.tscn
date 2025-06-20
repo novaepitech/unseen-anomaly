@@ -1,21 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://i6luuc2ltlvm"]
+[gd_scene load_steps=2 format=3 uid="uid://bje77wkffjlud"]
 
 [ext_resource type="PackedScene" uid="uid://78ov46o41bqo" path="res://scenes/normal_hallway.tscn" id="1_6iu7g"]
 
 [node name="NormalHallway" instance=ExtResource("1_6iu7g")]
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Walls" index="2"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.48788, 1.50732, 11.1119)
-size = Vector3(0.152466, 3.83099, 11.6357)
-
-[node name="BackwardTrigger" parent="Triggers" index="1"]
-visible = false
-
-[node name="CollisionShape3D" parent="Triggers/BackwardTrigger" index="0"]
-disabled = true
-
 [node name="Label3D2" type="Label3D" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93795, 2.02257, -1.74348)
+transform = Transform3D(1, 0, 4.04885e-10, 0, 1, 0, -4.04885e-10, 0, 1, 0.20429, 1.98919, 7.36867)
 text = "This is the normal hallway.
 Look closely about every details,
 the next ones might be a bit less... normal"

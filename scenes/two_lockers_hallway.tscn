@@ -3,9 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://78ov46o41bqo" path="res://scenes/normal_hallway.tscn" id="1_scul5"]
 
 [node name="NormalHallway" instance=ExtResource("1_scul5")]
-
-[node name="M_o_c2" parent="Geometry/Floor" index="3"]
-visible = false
-
-[node name="Label3D2" parent="." index="6"]
-visible = false

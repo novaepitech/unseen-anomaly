@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://78ov46o41bqo"]
+[gd_scene load_steps=17 format=4 uid="uid://78ov46o41bqo"]
 
 [ext_resource type="Texture2D" uid="uid://c4jajkexc4ohr" path="res://assets/models/M.O.C/Albedo M.O.C.png" id="1_jfuvf"]
 [ext_resource type="ArrayMesh" uid="uid://1akc1pbgxffo" path="res://assets/models/M.O.C/M.O.C.obj" id="1_wpcjn"]
+[ext_resource type="PackedScene" uid="uid://c6ndmej0ls0ok" path="res://scenes/door.tscn" id="5_otibj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1vsc0"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -15,17 +16,68 @@ background_mode = 2
 sky = SubResource("Sky_wpcjn")
 tonemap_mode = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7xa5m"]
-size = Vector3(10.7185, 0.116699, 54.8618)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i78qv"]
+data = PackedVector3Array(-21.65, -0.05, 42.65, -21.65, -0.05, -42.65, -21.65, 0.05, -42.65, 21.65, -0.05, -42.65, -21.65, -0.05, -42.65, -21.65, -0.05, 42.65, -21.65, 0.05, -42.65, -21.65, -0.05, -42.65, 21.65, -0.05, -42.65, -21.65, 0.05, -42.65, -21.65, 0.05, 42.65, -21.65, -0.05, 42.65, -21.65, -0.05, 42.65, -21.65, 0.05, 42.65, 21.65, 0.05, 42.65, 21.65, 0.05, 42.65, -21.65, 0.05, 42.65, -21.65, 0.05, -42.65, -21.65, -0.05, 42.65, 21.65, -0.05, 42.65, 21.65, -0.05, -42.65, 21.65, 0.05, 42.65, 21.65, -0.05, 42.65, -21.65, -0.05, 42.65, 21.65, -0.05, -42.65, 21.65, -0.05, 42.65, 21.65, 0.05, 42.65, 21.65, -0.05, -42.65, 21.65, 0.05, -42.65, -21.65, 0.05, -42.65, -21.65, 0.05, -42.65, 21.65, 0.05, -42.65, 21.65, 0.05, 42.65, 21.65, 0.05, 42.65, 21.65, 0.05, -42.65, 21.65, -0.05, -42.65)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jfuvf"]
+load_path = "res://.godot/imported/Concrete.png-b47fe9ebdab5bda7dd4ded213270774f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_otibj"]
+albedo_texture = SubResource("CompressedTexture2D_jfuvf")
+uv1_triplanar = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yvarb"]
+load_path = "res://.godot/imported/Metro_light.png-f88480e107e7be5fc62dbe12f1c8d46d.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cmxom"]
+load_path = "res://.godot/imported/Metro_light_Emissor.png-ba8554a6897bfba72c739f6440e68f7d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3v1pu"]
+resource_name = "light"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_yvarb")
+emission_enabled = true
+emission_energy_multiplier = 7.4
+emission_texture = SubResource("CompressedTexture2D_cmxom")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f7yxf"]
+_surfaces = [{
+"aabb": AABB(-0.18654, -0.103977, -1.01816, 0.37308, 0.190771, 2.03632),
+"format": 34896613377,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAADAAEAAAAEAAEAAwAFAAIABAAGAAMABgAFAAMABwAGAAQACAAEAAAABwAEAAgACAAJAAcACAAAAAoACAALAAkACgALAAgACwAMAAkABwAJAAwACgANAAsACwANAAwACgAAAA4ADgAAAAIADwANAAoACgAOAA8ADwAQAA0ADgACABEABQARAAIADwAOABIAEgAOABEABQATABEAEgARABMAFAATAAUAFAASABMABgAUAAUADwASABUAFQASABQAFQAQAA8AFgAUAAYAFQAUABYAFgAGAAcABwAMABYAFgAXABUAFQAXABAAFgAMABcADQAQABcADQAXAAwAGAAZABoAGAAbABkAGgAZABwAGwAcABkAGgAdABgAHQAbABgAGgAcAB4AHQAaAB4AHgAcAB8AHQAeACAAHgAfACAAHQAhABsAHAAbACEAIAAhAB0AHAAhAB8AIAAfACEAIgAjACQAIgAlACMAJgAkACMAJQAmACMAJwAiACQAJwAlACIAJwAkACgAJQApACYAJQAnACoAJQAqACkAKgAnACgAKQArACYAKQAqACsAJAAmACsAKgAoACsAJAArACgA"),
+"name": "light",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("AADog/9/AAAAAP//AAAAAAAA////fwAA/////wAAAAAAAOiDAAAAAP//////fwAA///ogwAAAADP6QAAhAMAAC8WAACEAwAAj95HkQEKAAAvFgAA/38AAG8hR5EBCgAAj95Hkf9/AABvIUeR/38AAAAA6IP//wAALxYAAHr8AABvIUeR/fUAAAAA/////wAA///og///AAD///////8AAP//6IP/fwAAz+kAAHr8AADP6QAA/38AAI/eR5H99QAA36mXIwYEAADDxTdL+PsAAMPFN0sGBAAA36mXI/j7AAAcu1SL+PsAAPyNN0sGBAAAHLtUiwYEAACjmFSL+PsAAKOYVIsGBAAA/I03S/j7AAAfVpcjBgQAADs6N0v4+wAAH1aXI/j7AAA7OjdLBgQAAOJEVIv4+wAAAnI3SwYEAAACcjdL+PsAAOJEVIsGBAAAW2dUiwYEAABbZ1SL+PsAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hohs6"]
+resource_name = "Metro_light"
+_surfaces = [{
+"aabb": AABB(-0.18654, -0.103977, -1.01816, 0.37308, 0.190771, 2.03632),
+"attribute_data": PackedByteArray("iU//Ag1E/4INRP8CiU//ggXH602Hu6x9h7vrTQXHrH0Y1Il5GNQPUuhgrH03Vf//N1Wsfehg///6bWr8+m2sfQXHKh6Hu+tNh7sqHgXH600Y1MhJGNROIiDj/v8Y1J7aIOOF2BjU5f2EAJd/Yi5oAmIul3+EAGgCvoasfeCT//++hmr84JOsfYGfrH2Bn///vob//6x5rH2+hkGBrHn///pt///6bax9j0bch0cj//9HI9yHj0b//yDjhdgY1CSzIOMLsRjUa9aFrUGBh7tk+YWt//+Hu0GBha1BgYGfHgmFrYMCgZ9BgYWt//+Bn0GBha1BgYGfZPmFrYMCh7tBgYWtQYGHux4JRyPchwAA//8AANyHRyP//4e7QYGpyP//h7v//6nIrH3mLgAAAAD/fwAAAADmLv9//++rAin1U/0p9asC/+9T/dTqqwLU6lP99exp+wjzwAAI82n79ezAADDzqwLN7FP9zeyrAjDzU/3/7+aEMPMTeyn1JYHU6iWBzewTewjzafv17MAA9exp+wjzwAAp9SWB1Oolgf/v5oQw8xN7zewTe//vqwIp9VP9/+9T/Sn1qwLU6qsC1OpT/fXsafsI88AA9ezAAAjzafsw86sCzexT/TDzU/3N7KsCMPMTe//v5oQp9SWBzewTe9TqJYEI82n79ezAAAjzwAD17Gn71OolgSn1JYH/7+aEzewTezDzE3s="),
+"format": 34896613399,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAHAAQACAAEAAkACgALAAwACgANAAsADgANAAoADgAKAA8AEAARABIAEAATABEAFAATABAAFAAQABUAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AHwAhACIAHwAiACMAJAAlACYAJAAnACUAJQAnACgAJQAoACkAKgArACwAKgAtACsALgAvADAALgAxAC8AMgAzADQAMgA1ADMANgA3ADgANgA5ADcAOgA7ADwAOgA9ADsAPgA/AEAAPgBBAD8AQgBDAEQAQgBFAEMARgBHAEgARgBJAEcASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBRAE4AUgBTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXQBcAF8AXQBfAGAAYQBiAGMAYQBkAGIAZQBmAGcAZgBlAGgAZgBoAGkAagBrAGwAagBtAGsAbgBqAGwAbgBsAG8AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeQB4AHsAeQB7AHwAfQB+AH8AfQCAAH4AgQCCAIMAggCBAIQAggCEAIUA"),
+"material": SubResource("StandardMaterial3D_3v1pu"),
+"name": "light",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 134,
+"vertex_data": PackedByteArray("AADog/9/stEAAP//AABU1QAA////f1TVAADogwAABtIAAOiDAABv/P////8AAP//AAD//wAA/////+iDAABv/M/pAACEAwT4LxYAAIQDBPj//+iD/38p2f///////1TV//////9/VNX//+iD///M2M/pAAB6/Cndz+kAAP9/Kd3//+iD//8nwAAA//////+//////////78AAOiD//8nwC8WAAB6/MbAz+kAAHr8xsDP6QAAevw8828hR5H99U7kLxYAAHr8PPOP3keR/fVO5P//////f///AAD///////8AAP///3//////////////LxYAAP9/Kd0AAOiD///M2C8WAAB6/CndAADog/9/KdkAAP///39U1QAA/////1TVz+kAAP9/Kd3//+iDAADM2M/pAACEAynd///og/9/Kdn//////39U1f////8AAFTVbyFHkf9///+P3keR/fX//4/eR5H/f///byFHkf31//8vFgAAhAP6wY/eR5EBCh/Jz+kAAIQD+sFvIUeRAQofyc/pAAD/f/LYj95Hkf318tjP6QAAevzy2I/eR5H/f/LYLxYAAP9/8thvIUeRAQry2C8WAACEA/LYbyFHkf9/8tgvFgAAevzy2G8hR5H/f/LYLxYAAP9/8thvIUeR/fXy2M/pAACEA/LYj95Hkf9/8tjP6QAA/3/y2I/eR5EBCvLYbyFHkQEK//+P3keR/3///4/eR5EBCv//byFHkf9///8vFgAAhAMp3QAA6IP/fynZLxYAAP9/Kd0AAOiDAADM2P////8AAP+/AAD///9//78AAP//AAD/v///////f/+/36mXIwYE/z/DxTdL+PugMcPFN0sGBKAx36mXI/j7/z/8jTdLBgSgMfyNN0v4+6Axw8U3SwYEXs4cu1SL+PsL7hy7VIsGBAvuw8U3S/j7Xs4cu1SLBgTkw6OYVIv4++TDo5hUiwYE5MMcu1SL+Pvkw9+plyP4+wCAHLtUi/j7AIDDxTdL+PsAgPyNN0v4+wCAo5hUi/j7AICjmFSLBgQaPPyNN0v4++0i/I03SwYE7SKjmFSL+PsaPMPFN0sGBAAA/I03SwYEAADfqZcjBgQAABy7VIsGBAAAo5hUiwYEAAAfVpcjBgT//zs6N0v4+xHdH1aXI/j7//87OjdLBgQR3QJyN0sGBBHdAnI3S/j7Ed07OjdLBgTtIuJEVIv4+xo8Ozo3S/j77SLiRFSLBgQaPOJEVIsGBPMRW2dUi/j78xHiRFSL+PvzEVtnVIsGBPMR4kRUi/j7AAAfVpcj+PsAADs6N0v4+wAAW2dUi/j7AAACcjdL+PsAAFtnVIsGBAvuAnI3S/j7Xs5bZ1SL+PsL7gJyN0sGBF7OAnI3SwYE//87OjdLBgT//x9WlyMGBP//W2dUiwYE///iRFSLBgT//65QVqhUVaqqVFWqqh9Rj6gUPurB/z//v/8//78UPurB0zsrxNM7K8RApiBTqqpUVaqqVFWmplNTAqIBUQKiAVHzePN4/3//f/9//3/zePN4CHIIcghyCHJ/OX/GgTJ9zX85f8aBMn3N/3//v/9//7//f/+//3//vwDR/N1S01fZANH83R/TvdlU1VTVVNVU1QKiAVGmplNTAqIBUUCmIFOqqlRVqqpUVf9//z+TrP///3//P5Os//8RbBFs717vXhFsEWzvXu9ePdOB2T3Tgdk904HZPdOB2XymPlN8pj5TfKY+U3ymPlN8pj5TfKY+U3ymPlN8pj5TPdOB2T3Tgdk904HZPdOB2f9/a1P/f/8//39rU/9//z8A0fzdH9O92QDR/N1S01fZ////f////3////9/////fwAA/3/pJS006SUtNAAA/3/SS+il0kvopeklLTQNN+MRDTfjEeklLTSUzcpmyeZqssnmarKUzcpm/3////9/////f////3////9////J5mqyDdHj3Q3R493J5mqy////f////3////9/////f////3//f/8/DdHj3f9//z8N0ePdG6INURuiDVEN0ePdyeZqsg3R493J5mqyG24Ntw034xEbbg23DTfjEf9//3//f/9//3//f/9//3//f/9/DTfjEeklLTQNN+MR6SUtNP9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_f7yxf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i78qv"]
 albedo_texture = ExtResource("1_jfuvf")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wpcjn"]
-size = Vector3(0.225, 2.63, 7.14)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jfuvf"]
-size = Vector3(0.225, 2.63, 7.14)
+size = Vector3(0.225, 2.63, 4.8)
 
 [node name="NormalHallway" type="Node3D"]
 
@@ -41,77 +93,130 @@ shadow_enabled = true
 [node name="Floor" type="StaticBody3D" parent="Geometry"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.428955, -0.45, -0.483521)
-size = Vector3(10.6845, 0.1, 54.8459)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821045, -0.45, -7.41057)
+size = Vector3(57.6, 0.1, 85.3)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.447197, -0.44165, -0.480366)
-shape = SubResource("BoxShape3D_7xa5m")
-
-[node name="M_o_c" type="MeshInstance3D" parent="Geometry/Floor"]
-transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -2.49458)
-material_override = SubResource("StandardMaterial3D_i78qv")
-mesh = ExtResource("1_wpcjn")
-
-[node name="M_o_c2" type="MeshInstance3D" parent="Geometry/Floor"]
-transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -3.49458)
-material_override = SubResource("StandardMaterial3D_i78qv")
-mesh = ExtResource("1_wpcjn")
-
-[node name="M_o_c3" type="MeshInstance3D" parent="Geometry/Floor"]
-transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -4.48385)
-material_override = SubResource("StandardMaterial3D_i78qv")
-mesh = ExtResource("1_wpcjn")
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Geometry/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.428955, -0.45, -7.41057)
+shape = SubResource("ConcavePolygonShape3D_i78qv")
 
 [node name="Walls" type="StaticBody3D" parent="Geometry"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.82705, 1.50732, -7.11031)
-size = Vector3(0.152466, 3.83099, 41.8913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.82705, 1.50732, -9.71466)
+size = Vector3(0.152466, 3.83099, 47.1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74763, 1.48858, -7.1227)
-size = Vector3(0.152466, 3.79352, 41.8665)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74763, 1.48858, -4.25595)
+material_override = SubResource("StandardMaterial3D_otibj")
+size = Vector3(0.152466, 3.79352, 47.6)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry/Walls"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.55237, 1.48858, 19.044)
+size = Vector3(0.152466, 3.79352, 26.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry/Walls"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.9024, 1.48858, 13.744)
+size = Vector3(0.152466, 3.79352, 22.2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Walls"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 26.9524, 1.48858, 22.294)
+size = Vector3(0.152466, 3.79352, 17.8)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry/Walls"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20.7524, 1.48858, 25.1441)
+size = Vector3(0.152466, 3.79352, 12.1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Geometry/Walls"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -8.37263, 1.48858, -33.331)
+size = Vector3(0.152466, 3.79352, 26.5)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Geometry/Walls"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -16.7226, 1.48858, -28.031)
+size = Vector3(0.152466, 3.79352, 22.2)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Geometry/Walls"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -27.7726, 1.48858, -36.581)
+size = Vector3(0.152466, 3.79352, 17.8)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Geometry/Walls"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -21.5726, 1.48858, -39.431)
+size = Vector3(0.152466, 3.79352, 12.1)
 
 [node name="Ceiling" type="StaticBody3D" parent="Geometry"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Ceiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Ceiling"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.374574, 3.42945, -7.12715)
-size = Vector3(0.152466, 10.7198, 41.8577)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.824575, 3.62945, -10.3771)
+size = Vector3(0.152466, 54.6, 95.6)
 
 [node name="Props" type="Node3D" parent="."]
 
 [node name="Lights" type="Node3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Props/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0394126, 3.12684, 0)
+[node name="light" type="MeshInstance3D" parent="Props/Lights"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -11.9058)
+mesh = SubResource("ArrayMesh_hohs6")
+skeleton = NodePath("")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Props/Lights/light"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00688648, -0.108254, 0.0010251)
 light_energy = 1.5
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Props/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0394126, 3.12684, -11.8989)
+[node name="light2" type="MeshInstance3D" parent="Props/Lights"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -3.4058)
+mesh = SubResource("ArrayMesh_hohs6")
+skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Props/Lights/light2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 light_energy = 1.5
+
+[node name="Lockers" type="Node" parent="Props"]
+
+[node name="M_o_c" type="MeshInstance3D" parent="Props/Lockers"]
+transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -2.49458)
+material_override = SubResource("StandardMaterial3D_i78qv")
+mesh = ExtResource("1_wpcjn")
+skeleton = NodePath("../../../Geometry/Floor")
+
+[node name="M_o_c2" type="MeshInstance3D" parent="Props/Lockers"]
+transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -3.49458)
+material_override = SubResource("StandardMaterial3D_i78qv")
+mesh = ExtResource("1_wpcjn")
+skeleton = NodePath("../../../Geometry/Floor")
+
+[node name="M_o_c3" type="MeshInstance3D" parent="Props/Lockers"]
+transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -4.48385)
+material_override = SubResource("StandardMaterial3D_i78qv")
+mesh = ExtResource("1_wpcjn")
+skeleton = NodePath("../../../Geometry/Floor")
+
+[node name="Chairs" type="Node" parent="Props"]
+
+[node name="Door" parent="Props" instance=ExtResource("5_otibj")]
+transform = Transform3D(-2.98023e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.98023e-08, 4.7, 0.9, 7.1)
 
 [node name="Triggers" type="Node3D" parent="."]
 transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -3.49458)
 
 [node name="ForwardTrigger" type="Area3D" parent="Triggers"]
-transform = Transform3D(1, 0, 2.79397e-09, 0, 1, 0, -2.79397e-09, 0, 1, -10.6937, 0, 3.20343)
+transform = Transform3D(-4.74975e-08, 0, 1, 0, 1, 0, -1, 0, -4.74975e-08, -17.6678, 0, 16.3197)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/ForwardTrigger"]
-transform = Transform3D(1, 0, 5.58794e-09, 0, 1, 0, -5.58794e-09, 0, 1, -0.0516939, 0.466667, 0.124798)
+transform = Transform3D(1, 0, 9.0804e-08, 0, 1.00002, 0, -9.0804e-08, 0, 1, -0.185022, 0.466667, 0.125746)
 shape = SubResource("BoxShape3D_wpcjn")
 
 [node name="BackwardTrigger" type="Area3D" parent="Triggers"]
-transform = Transform3D(1, 0, 9.31323e-10, 0, 1, 0, -9.31323e-10, 0, 1, 9.21785, 0, 3.12044)
+transform = Transform3D(-4.74975e-08, 0, 1, 0, 1, 0, -1, 0, -4.74975e-08, 13.0796, 0, -10.0983)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/BackwardTrigger"]
-transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -1.86265e-09, 0, 1, 0.000471115, 0.466667, 0.0666651)
-shape = SubResource("BoxShape3D_jfuvf")
+transform = Transform3D(1, 0, 9.0804e-08, 0, 1.00002, 0, -9.0804e-08, 0, 1, -0.185022, 0.466667, 0.125746)
+shape = SubResource("BoxShape3D_wpcjn")
 
 [node name="SpawnPoint" type="Marker3D" parent="Triggers"]
-transform = Transform3D(0.109353, 0, 0.994003, 0, 1, 0, -0.994003, 0, 0.109353, 3.16063, 0.696017, 3.22921)
+transform = Transform3D(0.109353, 0, 0.994003, 0, 1, 0, -0.994003, 0, 0.109353, 12.8625, -0.778693, -1.30636)
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.56081, 1.66662, -7.09338)
