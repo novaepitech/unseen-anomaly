@@ -18,6 +18,6 @@ shape = SubResource("ConcavePolygonShape3D_6iu7g")
 [node name="Label3D2" type="Label3D" parent="." index="6"]
 transform = Transform3D(1, 0, 4.04885e-10, 0, 1, 0, -4.04885e-10, 0, 1, 0.20429, 1.98919, 7.36867)
 text = "This is the normal hallway.
-Look closely about every details,
+Look closely at every detail,
 the next ones might be a bit less... normal"
 font_size = 62

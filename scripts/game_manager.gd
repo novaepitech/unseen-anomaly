@@ -18,14 +18,15 @@ extends Node
 # An array to hold all your anomaly scenes.
 @export var anomaly_scenes: Array[PackedScene] = [
     preload("res://scenes/two_lockers_hallway.tscn"),
-    preload("res://scenes/no_sound_hallway.tscn")
+    preload("res://scenes/no_sound_hallway.tscn"),
+    preload("res://scenes/small_chairs_hallway.tscn")
 ]
 
 # The path to your "You Win!" screen.
 @export var win_scene_path: String = "res://scenes/win_screen.tscn"
 
 # How many correct loops in a row are needed to win.
-@export var loops_to_win: int = 4
+@export var loops_to_win: int = 8
 
 # The probability (from 0.0 to 1.0) of an anomaly spawning.
 # 0.5 means a 50% chance.

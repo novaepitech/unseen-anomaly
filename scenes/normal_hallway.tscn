@@ -104,8 +104,8 @@ size = Vector3(0.152466, 3.79352, 12.1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Geometry/Ceiling"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.824575, 3.62945, -10.3771)
-size = Vector3(0.152466, 54.6, 95.6)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.224575, 3.62945, -10.3771)
+size = Vector3(0.152466, 55.8, 95.6)
 
 [node name="Props" type="Node3D" parent="."]
 
@@ -203,5 +203,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.862
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -5.63919, 1.66662, -7.09338)
-text = "<- No anomaly - Anomaly ->"
+text = "<- Anomaly - No anomaly ->"
 font_size = 62

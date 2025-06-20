@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bst2wtuopqj2n"]
+
+[ext_resource type="PackedScene" uid="uid://78ov46o41bqo" path="res://scenes/normal_hallway.tscn" id="1_v548x"]
+
+[node name="NormalHallway" instance=ExtResource("1_v548x")]
+
+[node name="Chair" parent="Props/Chairs" index="0"]
+transform = Transform3D(1.43301e-13, -3.27835e-06, 75, -75, -3.27835e-06, 1.67153e-20, 3.27835e-06, -75, -3.27835e-06, -5.4, -7.45058e-09, -0.1)
+
+[node name="Chair2" parent="Props/Chairs" index="1"]
+transform = Transform3D(1.43301e-13, -3.27835e-06, 75, -75, -3.27835e-06, 1.67153e-20, 3.27835e-06, -75, -3.27835e-06, -5.4, -7.45058e-09, -12.3)
+
+[node name="Chair3" parent="Props/Chairs" index="2"]
+transform = Transform3D(1.43301e-13, -3.27835e-06, 75, -75, -3.27835e-06, 1.67153e-20, 3.27835e-06, -75, -3.27835e-06, -5.4, -7.45058e-09, -13.1)
+
+[node name="Chair4" parent="Props/Chairs" index="3"]
+transform = Transform3D(1.43301e-13, -3.27835e-06, 75, -75, -3.27835e-06, 1.67153e-20, 3.27835e-06, -75, -3.27835e-06, -5.4, -7.45058e-09, -13.9)
