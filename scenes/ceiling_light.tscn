@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=4 uid="uid://br4h2pomgq62v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yvarb"]
+load_path = "res://.godot/imported/Metro_light.png-f88480e107e7be5fc62dbe12f1c8d46d.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cmxom"]
+load_path = "res://.godot/imported/Metro_light_Emissor.png-ba8554a6897bfba72c739f6440e68f7d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3v1pu"]
+resource_name = "light"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_yvarb")
+emission_enabled = true
+emission_energy_multiplier = 7.4
+emission_texture = SubResource("CompressedTexture2D_cmxom")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f7yxf"]
+_surfaces = [{
+"aabb": AABB(-0.18654, -0.103977, -1.01816, 0.37308, 0.190771, 2.03632),
+"format": 34896613377,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAADAAEAAAAEAAEAAwAFAAIABAAGAAMABgAFAAMABwAGAAQACAAEAAAABwAEAAgACAAJAAcACAAAAAoACAALAAkACgALAAgACwAMAAkABwAJAAwACgANAAsACwANAAwACgAAAA4ADgAAAAIADwANAAoACgAOAA8ADwAQAA0ADgACABEABQARAAIADwAOABIAEgAOABEABQATABEAEgARABMAFAATAAUAFAASABMABgAUAAUADwASABUAFQASABQAFQAQAA8AFgAUAAYAFQAUABYAFgAGAAcABwAMABYAFgAXABUAFQAXABAAFgAMABcADQAQABcADQAXAAwAGAAZABoAGAAbABkAGgAZABwAGwAcABkAGgAdABgAHQAbABgAGgAcAB4AHQAaAB4AHgAcAB8AHQAeACAAHgAfACAAHQAhABsAHAAbACEAIAAhAB0AHAAhAB8AIAAfACEAIgAjACQAIgAlACMAJgAkACMAJQAmACMAJwAiACQAJwAlACIAJwAkACgAJQApACYAJQAnACoAJQAqACkAKgAnACgAKQArACYAKQAqACsAJAAmACsAKgAoACsAJAArACgA"),
+"name": "light",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("AADog/9/AAAAAP//AAAAAAAA////fwAA/////wAAAAAAAOiDAAAAAP//////fwAA///ogwAAAADP6QAAhAMAAC8WAACEAwAAj95HkQEKAAAvFgAA/38AAG8hR5EBCgAAj95Hkf9/AABvIUeR/38AAAAA6IP//wAALxYAAHr8AABvIUeR/fUAAAAA/////wAA///og///AAD///////8AAP//6IP/fwAAz+kAAHr8AADP6QAA/38AAI/eR5H99QAA36mXIwYEAADDxTdL+PsAAMPFN0sGBAAA36mXI/j7AAAcu1SL+PsAAPyNN0sGBAAAHLtUiwYEAACjmFSL+PsAAKOYVIsGBAAA/I03S/j7AAAfVpcjBgQAADs6N0v4+wAAH1aXI/j7AAA7OjdLBgQAAOJEVIv4+wAAAnI3SwYEAAACcjdL+PsAAOJEVIsGBAAAW2dUiwYEAABbZ1SL+PsAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hohs6"]
+resource_name = "Metro_light"
+_surfaces = [{
+"aabb": AABB(-0.18654, -0.103977, -1.01816, 0.37308, 0.190771, 2.03632),
+"attribute_data": PackedByteArray("iU//Ag1E/4INRP8CiU//ggXH602Hu6x9h7vrTQXHrH0Y1Il5GNQPUuhgrH03Vf//N1Wsfehg///6bWr8+m2sfQXHKh6Hu+tNh7sqHgXH600Y1MhJGNROIiDj/v8Y1J7aIOOF2BjU5f2EAJd/Yi5oAmIul3+EAGgCvoasfeCT//++hmr84JOsfYGfrH2Bn///vob//6x5rH2+hkGBrHn///pt///6bax9j0bch0cj//9HI9yHj0b//yDjhdgY1CSzIOMLsRjUa9aFrUGBh7tk+YWt//+Hu0GBha1BgYGfHgmFrYMCgZ9BgYWt//+Bn0GBha1BgYGfZPmFrYMCh7tBgYWtQYGHux4JRyPchwAA//8AANyHRyP//4e7QYGpyP//h7v//6nIrH3mLgAAAAD/fwAAAADmLv9//++rAin1U/0p9asC/+9T/dTqqwLU6lP99exp+wjzwAAI82n79ezAADDzqwLN7FP9zeyrAjDzU/3/7+aEMPMTeyn1JYHU6iWBzewTewjzafv17MAA9exp+wjzwAAp9SWB1Oolgf/v5oQw8xN7zewTe//vqwIp9VP9/+9T/Sn1qwLU6qsC1OpT/fXsafsI88AA9ezAAAjzafsw86sCzexT/TDzU/3N7KsCMPMTe//v5oQp9SWBzewTe9TqJYEI82n79ezAAAjzwAD17Gn71OolgSn1JYH/7+aEzewTezDzE3s="),
+"format": 34896613399,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAHAAQACAAEAAkACgALAAwACgANAAsADgANAAoADgAKAA8AEAARABIAEAATABEAFAATABAAFAAQABUAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AHwAhACIAHwAiACMAJAAlACYAJAAnACUAJQAnACgAJQAoACkAKgArACwAKgAtACsALgAvADAALgAxAC8AMgAzADQAMgA1ADMANgA3ADgANgA5ADcAOgA7ADwAOgA9ADsAPgA/AEAAPgBBAD8AQgBDAEQAQgBFAEMARgBHAEgARgBJAEcASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBRAE4AUgBTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXQBcAF8AXQBfAGAAYQBiAGMAYQBkAGIAZQBmAGcAZgBlAGgAZgBoAGkAagBrAGwAagBtAGsAbgBqAGwAbgBsAG8AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeQB4AHsAeQB7AHwAfQB+AH8AfQCAAH4AgQCCAIMAggCBAIQAggCEAIUA"),
+"material": SubResource("StandardMaterial3D_3v1pu"),
+"name": "light",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 134,
+"vertex_data": PackedByteArray("AADog/9/stEAAP//AABU1QAA////f1TVAADogwAABtIAAOiDAABv/P////8AAP//AAD//wAA/////+iDAABv/M/pAACEAwT4LxYAAIQDBPj//+iD/38p2f///////1TV//////9/VNX//+iD///M2M/pAAB6/Cndz+kAAP9/Kd3//+iD//8nwAAA//////+//////////78AAOiD//8nwC8WAAB6/MbAz+kAAHr8xsDP6QAAevw8828hR5H99U7kLxYAAHr8PPOP3keR/fVO5P//////f///AAD///////8AAP///3//////////////LxYAAP9/Kd0AAOiD///M2C8WAAB6/CndAADog/9/KdkAAP///39U1QAA/////1TVz+kAAP9/Kd3//+iDAADM2M/pAACEAynd///og/9/Kdn//////39U1f////8AAFTVbyFHkf9///+P3keR/fX//4/eR5H/f///byFHkf31//8vFgAAhAP6wY/eR5EBCh/Jz+kAAIQD+sFvIUeRAQofyc/pAAD/f/LYj95Hkf318tjP6QAAevzy2I/eR5H/f/LYLxYAAP9/8thvIUeRAQry2C8WAACEA/LYbyFHkf9/8tgvFgAAevzy2G8hR5H/f/LYLxYAAP9/8thvIUeR/fXy2M/pAACEA/LYj95Hkf9/8tjP6QAA/3/y2I/eR5EBCvLYbyFHkQEK//+P3keR/3///4/eR5EBCv//byFHkf9///8vFgAAhAMp3QAA6IP/fynZLxYAAP9/Kd0AAOiDAADM2P////8AAP+/AAD///9//78AAP//AAD/v///////f/+/36mXIwYE/z/DxTdL+PugMcPFN0sGBKAx36mXI/j7/z/8jTdLBgSgMfyNN0v4+6Axw8U3SwYEXs4cu1SL+PsL7hy7VIsGBAvuw8U3S/j7Xs4cu1SLBgTkw6OYVIv4++TDo5hUiwYE5MMcu1SL+Pvkw9+plyP4+wCAHLtUi/j7AIDDxTdL+PsAgPyNN0v4+wCAo5hUi/j7AICjmFSLBgQaPPyNN0v4++0i/I03SwYE7SKjmFSL+PsaPMPFN0sGBAAA/I03SwYEAADfqZcjBgQAABy7VIsGBAAAo5hUiwYEAAAfVpcjBgT//zs6N0v4+xHdH1aXI/j7//87OjdLBgQR3QJyN0sGBBHdAnI3S/j7Ed07OjdLBgTtIuJEVIv4+xo8Ozo3S/j77SLiRFSLBgQaPOJEVIsGBPMRW2dUi/j78xHiRFSL+PvzEVtnVIsGBPMR4kRUi/j7AAAfVpcj+PsAADs6N0v4+wAAW2dUi/j7AAACcjdL+PsAAFtnVIsGBAvuAnI3S/j7Xs5bZ1SL+PsL7gJyN0sGBF7OAnI3SwYE//87OjdLBgT//x9WlyMGBP//W2dUiwYE///iRFSLBgT//65QVqhUVaqqVFWqqh9Rj6gUPurB/z//v/8//78UPurB0zsrxNM7K8RApiBTqqpUVaqqVFWmplNTAqIBUQKiAVHzePN4/3//f/9//3/zePN4CHIIcghyCHJ/OX/GgTJ9zX85f8aBMn3N/3//v/9//7//f/+//3//vwDR/N1S01fZANH83R/TvdlU1VTVVNVU1QKiAVGmplNTAqIBUUCmIFOqqlRVqqpUVf9//z+TrP///3//P5Os//8RbBFs717vXhFsEWzvXu9ePdOB2T3Tgdk904HZPdOB2XymPlN8pj5TfKY+U3ymPlN8pj5TfKY+U3ymPlN8pj5TPdOB2T3Tgdk904HZPdOB2f9/a1P/f/8//39rU/9//z8A0fzdH9O92QDR/N1S01fZ////f////3////9/////fwAA/3/pJS006SUtNAAA/3/SS+il0kvopeklLTQNN+MRDTfjEeklLTSUzcpmyeZqssnmarKUzcpm/3////9/////f////3////9////J5mqyDdHj3Q3R493J5mqy////f////3////9/////f////3//f/8/DdHj3f9//z8N0ePdG6INURuiDVEN0ePdyeZqsg3R493J5mqyG24Ntw034xEbbg23DTfjEf9//3//f/9//3//f/9//3//f/9/DTfjEeklLTQNN+MR6SUtNP9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_f7yxf")
+
+[node name="CeilingLight" type="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_hohs6")
+skeleton = NodePath("")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00688648, -0.108254, 0.0010251)
+light_color = Color(0.421744, 0.768407, 0.736326, 1)
+light_energy = 0.75
+omni_range = 18.345
+omni_attenuation = 2.698
