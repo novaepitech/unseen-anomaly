@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dees75y7hh3q3"]
+
+[ext_resource type="PackedScene" uid="uid://78ov46o41bqo" path="res://scenes/normal_hallway.tscn" id="1_krdwh"]
+
+[node name="NormalHallway" instance=ExtResource("1_krdwh")]
+
+[node name="CSGBox3D" parent="Geometry/Ceiling" index="0"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0745731, 3.62945, -10.3771)
+size = Vector3(0.152466, 56.1, 95.6)
+
+[node name="Light-buzz-sound" parent="Props/Lights" index="1"]
+autoplay = false
+
+[node name="Light-buzz-sound2" parent="Props/Lights" index="4"]
+autoplay = false

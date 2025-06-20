@@ -18,6 +18,7 @@ extends Node
 # An array to hold all your anomaly scenes.
 @export var anomaly_scenes: Array[PackedScene] = [
     preload("res://scenes/two_lockers_hallway.tscn"),
+    preload("res://scenes/no_sound_hallway.tscn")
 ]
 
 # The path to your "You Win!" screen.

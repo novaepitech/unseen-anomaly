@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://78ov46o41bqo"]
+[gd_scene load_steps=14 format=3 uid="uid://78ov46o41bqo"]
 
 [ext_resource type="PackedScene" uid="uid://br4h2pomgq62v" path="res://scenes/ceiling_light.tscn" id="1_i78qv"]
 [ext_resource type="Texture2D" uid="uid://c4jajkexc4ohr" path="res://assets/models/M.O.C/Albedo M.O.C.png" id="1_jfuvf"]
 [ext_resource type="ArrayMesh" uid="uid://1akc1pbgxffo" path="res://assets/models/M.O.C/M.O.C.obj" id="1_wpcjn"]
+[ext_resource type="AudioStream" uid="uid://crgrq4xblv0rb" path="res://assets/sounds/light-buzz-sound.mp3" id="2_otibj"]
 [ext_resource type="PackedScene" uid="uid://c6ndmej0ls0ok" path="res://scenes/door.tscn" id="5_otibj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1vsc0"]
@@ -113,11 +114,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 [node name="light" parent="Props/Lights" instance=ExtResource("1_i78qv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -15.4058)
 
+[node name="Light-buzz-sound" type="AudioStreamPlayer3D" parent="Props/Lights"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -15.6058)
+stream = ExtResource("2_otibj")
+volume_db = -20.0
+unit_size = 15.0
+autoplay = true
+
 [node name="light4" parent="Props/Lights" instance=ExtResource("1_i78qv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -15.8058)
 
 [node name="light2" parent="Props/Lights" instance=ExtResource("1_i78qv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -4.13199)
+
+[node name="Light-buzz-sound2" type="AudioStreamPlayer3D" parent="Props/Lights"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -3.93199)
+stream = ExtResource("2_otibj")
+volume_db = -20.0
+unit_size = 15.0
+autoplay = true
 
 [node name="light3" parent="Props/Lights" instance=ExtResource("1_i78qv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -3.72148)
@@ -174,6 +189,6 @@ shape = SubResource("BoxShape3D_wpcjn")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.8625, -0.778693, -1.30636)
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.56081, 1.66662, -7.09338)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -5.63919, 1.66662, -7.09338)
 text = "<- No anomaly - Anomaly ->"
 font_size = 62
