@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://78ov46o41bqo"]
+[gd_scene load_steps=15 format=3 uid="uid://78ov46o41bqo"]
 
 [ext_resource type="PackedScene" uid="uid://br4h2pomgq62v" path="res://scenes/ceiling_light.tscn" id="1_i78qv"]
 [ext_resource type="Texture2D" uid="uid://c4jajkexc4ohr" path="res://assets/models/M.O.C/Albedo M.O.C.png" id="1_jfuvf"]
 [ext_resource type="ArrayMesh" uid="uid://1akc1pbgxffo" path="res://assets/models/M.O.C/M.O.C.obj" id="1_wpcjn"]
 [ext_resource type="AudioStream" uid="uid://crgrq4xblv0rb" path="res://assets/sounds/light-buzz-sound.mp3" id="2_otibj"]
 [ext_resource type="PackedScene" uid="uid://c6ndmej0ls0ok" path="res://scenes/door.tscn" id="5_otibj"]
+[ext_resource type="PackedScene" uid="uid://2yrxtx8s8wmk" path="res://scenes/chair.tscn" id="5_yvarb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1vsc0"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -158,6 +159,18 @@ mesh = ExtResource("1_wpcjn")
 skeleton = NodePath("../../../Geometry/Floor")
 
 [node name="Chairs" type="Node" parent="Props"]
+
+[node name="Chair" parent="Props/Chairs" instance=ExtResource("5_yvarb")]
+transform = Transform3D(2.86603e-13, -6.55671e-06, 150, -150, -6.55671e-06, 5.28549e-19, 6.55671e-06, -150, -6.55671e-06, -5.2, 0.5, -0.1)
+
+[node name="Chair2" parent="Props/Chairs" instance=ExtResource("5_yvarb")]
+transform = Transform3D(2.86603e-13, -6.55671e-06, 150, -150, -6.55671e-06, 5.28549e-19, 6.55671e-06, -150, -6.55671e-06, -5.2, 0.5, -12.3)
+
+[node name="Chair3" parent="Props/Chairs" instance=ExtResource("5_yvarb")]
+transform = Transform3D(2.86603e-13, -6.55671e-06, 150, -150, -6.55671e-06, 5.28549e-19, 6.55671e-06, -150, -6.55671e-06, -5.2, 0.5, -13.1)
+
+[node name="Chair4" parent="Props/Chairs" instance=ExtResource("5_yvarb")]
+transform = Transform3D(2.86603e-13, -6.55671e-06, 150, -150, -6.55671e-06, 5.28549e-19, 6.55671e-06, -150, -6.55671e-06, -5.2, 0.5, -13.9)
 
 [node name="Door" parent="Props" instance=ExtResource("5_otibj")]
 transform = Transform3D(-2.98023e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.98023e-08, 4.7, 0.9, 7.1)
