@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jkogcpv6e1mn"]
+
+[ext_resource type="PackedScene" uid="uid://78ov46o41bqo" path="res://scenes/normal_hallway.tscn" id="1_r0d1x"]
+
+[node name="NormalHallway" instance=ExtResource("1_r0d1x")]
+
+[node name="Chair4" parent="Props/Chairs" index="3"]
+visible = false
