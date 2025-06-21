@@ -4,5 +4,5 @@
 
 [node name="NormalHallway" instance=ExtResource("1_scul5")]
 
-[node name="M_o_c" parent="Props/Lockers" index="0"]
+[node name="Locker" parent="Props/Lockers" index="0"]
 visible = false

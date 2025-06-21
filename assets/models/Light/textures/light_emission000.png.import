@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo8c1d7p0gddj"
-path="res://.godot/imported/Interior_objects.jpg-6e1924dd5005fd6ba45a53c4750e8995.ctex"
+uid="uid://bv6xispoc7vop"
+path="res://.godot/imported/light_emission000.png-e84b23596ab8b3fcf35c3b70f4500c10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/Chair/Textures/Interior_objects.jpg"
-dest_files=["res://.godot/imported/Interior_objects.jpg-6e1924dd5005fd6ba45a53c4750e8995.ctex"]
+source_file="res://assets/models/Light/textures/light_emission000.png"
+dest_files=["res://.godot/imported/light_emission000.png-e84b23596ab8b3fcf35c3b70f4500c10.ctex"]
 
 [params]
 

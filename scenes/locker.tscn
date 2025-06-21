@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqlnrxf85c0ad"]
+
+[ext_resource type="Texture2D" uid="uid://c4jajkexc4ohr" path="res://assets/models/M.O.C/Albedo M.O.C.png" id="1_byg57"]
+[ext_resource type="ArrayMesh" uid="uid://1akc1pbgxffo" path="res://assets/models/M.O.C/M.O.C.obj" id="2_ewwd3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i78qv"]
+albedo_texture = ExtResource("1_byg57")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_byg57"]
+points = PackedVector3Array(-0.194342, -0.802112, -0.168889, 0.194287, -0.802112, -0.168889, -0.194342, -0.802112, 0.168833, -0.194342, 0.802112, -0.168889, 0.481546, -0.0312491, 0.384182, 0.486008, -0.773218, 0.395087, 0.194287, -0.802112, 0.168833, 0.194287, 0.802112, -0.168889, 0.475818, -0.763168, 0.405374, -0.194342, 0.802112, 0.168833, 0.481546, -0.0241827, 0.384182, 0.486008, 0.773061, 0.395087, 0.477683, 0.760185, 0.403519, 0.194287, 0.802112, 0.168833)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="M_o_c" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.49996, 0, -0.0106026, 0, 1.5, 0, 0.0106026, 0, 1.49996, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_i78qv")
+mesh = ExtResource("2_ewwd3")
+skeleton = NodePath("../../../Geometry/Floor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.49996, 0, -0.0106026, 0, 1.5, 0, 0.0106026, 0, 1.49996, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_byg57")

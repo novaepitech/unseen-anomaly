@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://78ov46o41bqo"]
+[gd_scene load_steps=22 format=3 uid="uid://78ov46o41bqo"]
 
 [ext_resource type="PackedScene" uid="uid://br4h2pomgq62v" path="res://scenes/ceiling_light.tscn" id="1_i78qv"]
-[ext_resource type="Texture2D" uid="uid://c4jajkexc4ohr" path="res://assets/models/M.O.C/Albedo M.O.C.png" id="1_jfuvf"]
-[ext_resource type="ArrayMesh" uid="uid://1akc1pbgxffo" path="res://assets/models/M.O.C/M.O.C.obj" id="1_wpcjn"]
 [ext_resource type="AudioStream" uid="uid://crgrq4xblv0rb" path="res://assets/sounds/light-buzz-sound.mp3" id="2_otibj"]
+[ext_resource type="PackedScene" uid="uid://cqlnrxf85c0ad" path="res://scenes/locker.tscn" id="3_cmxom"]
 [ext_resource type="PackedScene" uid="uid://c6ndmej0ls0ok" path="res://scenes/door.tscn" id="5_otibj"]
 [ext_resource type="PackedScene" uid="uid://2yrxtx8s8wmk" path="res://scenes/chair.tscn" id="5_yvarb"]
 
@@ -25,13 +24,6 @@ data = PackedVector3Array(-21.65, -0.05, 42.65, -21.65, -0.05, -42.65, -21.65, 0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yvarb"]
 data = PackedVector3Array(-0.076233, -1.9155, 23.55, -0.076233, -1.9155, -23.55, -0.076233, 1.9155, -23.55, 0.076233, -1.9155, -23.55, -0.076233, -1.9155, -23.55, -0.076233, -1.9155, 23.55, -0.076233, 1.9155, -23.55, -0.076233, -1.9155, -23.55, 0.076233, -1.9155, -23.55, -0.076233, 1.9155, -23.55, -0.076233, 1.9155, 23.55, -0.076233, -1.9155, 23.55, -0.076233, -1.9155, 23.55, -0.076233, 1.9155, 23.55, 0.076233, 1.9155, 23.55, 0.076233, 1.9155, 23.55, -0.076233, 1.9155, 23.55, -0.076233, 1.9155, -23.55, -0.076233, -1.9155, 23.55, 0.076233, -1.9155, 23.55, 0.076233, -1.9155, -23.55, 0.076233, 1.9155, 23.55, 0.076233, -1.9155, 23.55, -0.076233, -1.9155, 23.55, 0.076233, -1.9155, -23.55, 0.076233, -1.9155, 23.55, 0.076233, 1.9155, 23.55, 0.076233, -1.9155, -23.55, 0.076233, 1.9155, -23.55, -0.076233, 1.9155, -23.55, -0.076233, 1.9155, -23.55, 0.076233, 1.9155, -23.55, 0.076233, 1.9155, 23.55, 0.076233, 1.9155, 23.55, 0.076233, 1.9155, -23.55, 0.076233, -1.9155, -23.55)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jfuvf"]
-load_path = "res://.godot/imported/Concrete.png-b47fe9ebdab5bda7dd4ded213270774f.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_otibj"]
-albedo_texture = SubResource("CompressedTexture2D_jfuvf")
-uv1_triplanar = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cmxom"]
 data = PackedVector3Array(-0.076233, -1.89676, 23.8, -0.076233, -1.89676, -23.8, -0.076233, 1.89676, -23.8, 0.076233, -1.89676, -23.8, -0.076233, -1.89676, -23.8, -0.076233, -1.89676, 23.8, -0.076233, 1.89676, -23.8, -0.076233, -1.89676, -23.8, 0.076233, -1.89676, -23.8, -0.076233, 1.89676, -23.8, -0.076233, 1.89676, 23.8, -0.076233, -1.89676, 23.8, -0.076233, -1.89676, 23.8, -0.076233, 1.89676, 23.8, 0.076233, 1.89676, 23.8, 0.076233, 1.89676, 23.8, -0.076233, 1.89676, 23.8, -0.076233, 1.89676, -23.8, -0.076233, -1.89676, 23.8, 0.076233, -1.89676, 23.8, 0.076233, -1.89676, -23.8, 0.076233, 1.89676, 23.8, 0.076233, -1.89676, 23.8, -0.076233, -1.89676, 23.8, 0.076233, -1.89676, -23.8, 0.076233, -1.89676, 23.8, 0.076233, 1.89676, 23.8, 0.076233, -1.89676, -23.8, 0.076233, 1.89676, -23.8, -0.076233, 1.89676, -23.8, -0.076233, 1.89676, -23.8, 0.076233, 1.89676, -23.8, 0.076233, 1.89676, 23.8, 0.076233, 1.89676, 23.8, 0.076233, 1.89676, -23.8, 0.076233, -1.89676, -23.8)
@@ -62,9 +54,6 @@ data = PackedVector3Array(-0.076233, -1.89676, 6.05, -0.076233, -1.89676, -6.05,
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6ctnv"]
 data = PackedVector3Array(-0.076233, -27.9, 47.8, -0.076233, -27.9, -47.8, -0.076233, 27.9, -47.8, 0.076233, -27.9, -47.8, -0.076233, -27.9, -47.8, -0.076233, -27.9, 47.8, -0.076233, 27.9, -47.8, -0.076233, -27.9, -47.8, 0.076233, -27.9, -47.8, -0.076233, 27.9, -47.8, -0.076233, 27.9, 47.8, -0.076233, -27.9, 47.8, -0.076233, -27.9, 47.8, -0.076233, 27.9, 47.8, 0.076233, 27.9, 47.8, 0.076233, 27.9, 47.8, -0.076233, 27.9, 47.8, -0.076233, 27.9, -47.8, -0.076233, -27.9, 47.8, 0.076233, -27.9, 47.8, 0.076233, -27.9, -47.8, 0.076233, 27.9, 47.8, 0.076233, -27.9, 47.8, -0.076233, -27.9, 47.8, 0.076233, -27.9, -47.8, 0.076233, -27.9, 47.8, 0.076233, 27.9, 47.8, 0.076233, -27.9, -47.8, 0.076233, 27.9, -47.8, -0.076233, 27.9, -47.8, -0.076233, 27.9, -47.8, 0.076233, 27.9, -47.8, 0.076233, 27.9, 47.8, 0.076233, 27.9, 47.8, 0.076233, 27.9, -47.8, 0.076233, -27.9, -47.8)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i78qv"]
-albedo_texture = ExtResource("1_jfuvf")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wpcjn"]
 size = Vector3(0.225, 2.63, 4.8)
@@ -102,7 +91,6 @@ shape = SubResource("ConcavePolygonShape3D_yvarb")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Geometry/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74763, 1.48858, -4.25595)
-material_override = SubResource("StandardMaterial3D_otibj")
 size = Vector3(0.152466, 3.79352, 47.6)
 
 [node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="Geometry/Walls"]
@@ -190,7 +178,7 @@ shape = SubResource("ConcavePolygonShape3D_6ctnv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="light" parent="Props/Lights" instance=ExtResource("1_i78qv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -15.4058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0404377, 3.43509, -15.4058)
 
 [node name="Light-buzz-sound" type="AudioStreamPlayer3D" parent="Props/Lights"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -15.6058)
@@ -200,10 +188,10 @@ unit_size = 15.0
 autoplay = true
 
 [node name="light4" parent="Props/Lights" instance=ExtResource("1_i78qv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -15.8058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0404377, 3.43509, -15.8058)
 
 [node name="light2" parent="Props/Lights" instance=ExtResource("1_i78qv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -4.13199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0404377, 3.43509, -4.13199)
 
 [node name="Light-buzz-sound2" type="AudioStreamPlayer3D" parent="Props/Lights"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -3.93199)
@@ -213,50 +201,39 @@ unit_size = 15.0
 autoplay = true
 
 [node name="light3" parent="Props/Lights" instance=ExtResource("1_i78qv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0404377, 3.43509, -3.72148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0404377, 3.43509, -3.72148)
 
 [node name="Lockers" type="Node" parent="Props"]
 
-[node name="M_o_c" type="MeshInstance3D" parent="Props/Lockers"]
-transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -2.49458)
-material_override = SubResource("StandardMaterial3D_i78qv")
-mesh = ExtResource("1_wpcjn")
-skeleton = NodePath("../../../Geometry/Floor")
+[node name="Locker" parent="Props/Lockers" instance=ExtResource("3_cmxom")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.47683, 0.794107, -2.29458)
 
-[node name="M_o_c2" type="MeshInstance3D" parent="Props/Lockers"]
-transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -3.49458)
-material_override = SubResource("StandardMaterial3D_i78qv")
-mesh = ExtResource("1_wpcjn")
-skeleton = NodePath("../../../Geometry/Floor")
+[node name="Locker2" parent="Props/Lockers" instance=ExtResource("3_cmxom")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.47683, 0.794107, -3.29458)
 
-[node name="M_o_c3" type="MeshInstance3D" parent="Props/Lockers"]
-transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -4.48385)
-material_override = SubResource("StandardMaterial3D_i78qv")
-mesh = ExtResource("1_wpcjn")
-skeleton = NodePath("../../../Geometry/Floor")
+[node name="Locker3" parent="Props/Lockers" instance=ExtResource("3_cmxom")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.47683, 0.794107, -4.29458)
 
 [node name="Chairs" type="Node" parent="Props"]
 
 [node name="Chair" parent="Props/Chairs" instance=ExtResource("5_yvarb")]
-transform = Transform3D(2.86603e-13, -6.55671e-06, 150, -150, -6.55671e-06, 5.28549e-19, 6.55671e-06, -150, -6.55671e-06, -5.2, 0.5, -0.1)
+transform = Transform3D(1, 0, -2.33984e-22, 0, 1, -1.02277e-29, 2.11758e-22, 0, 1, -5.2, 0.5, -0.1)
 
 [node name="Chair2" parent="Props/Chairs" instance=ExtResource("5_yvarb")]
-transform = Transform3D(2.86603e-13, -6.55671e-06, 150, -150, -6.55671e-06, 5.28549e-19, 6.55671e-06, -150, -6.55671e-06, -5.2, 0.5, -12.3)
+transform = Transform3D(1, 5.96046e-08, -2.33984e-22, -5.96046e-08, 1, 0, 2.11758e-22, 0, 1, -5.2, 0.5, -12.3)
 
 [node name="Chair3" parent="Props/Chairs" instance=ExtResource("5_yvarb")]
-transform = Transform3D(2.86603e-13, -6.55671e-06, 150, -150, -6.55671e-06, 5.28549e-19, 6.55671e-06, -150, -6.55671e-06, -5.2, 0.5, -13.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 0.5, -13.1)
 
 [node name="Chair4" parent="Props/Chairs" instance=ExtResource("5_yvarb")]
-transform = Transform3D(2.86603e-13, -6.55671e-06, 150, -150, -6.55671e-06, 5.28549e-19, 6.55671e-06, -150, -6.55671e-06, -5.2, 0.5, -13.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 0.5, -13.9)
 
 [node name="Door" parent="Props" instance=ExtResource("5_otibj")]
-transform = Transform3D(-2.98023e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.98023e-08, 4.7, 0.9, 7.1)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.71236, -0.1, 7.2)
 
 [node name="LevelTextHint" type="Label3D" parent="Props/Door"]
-transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -0.922344, 1.36027, 0.0680351)
-text = "101"
-font_size = 48
-outline_size = 4
+transform = Transform3D(3.55271e-15, 8.74228e-08, -1, -1, 8.74228e-08, 7.37408e-15, 8.74228e-08, 1, 8.74228e-08, -0.041863, 0.6, 2)
+text = "001"
 
 [node name="Triggers" type="Node3D" parent="."]
 transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -3.49458)

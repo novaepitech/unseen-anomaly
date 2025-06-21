@@ -1,17 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://bst2wtuopqj2n"]
+[gd_scene load_steps=3 format=3 uid="uid://lg816sanif8f"]
 
 [ext_resource type="PackedScene" uid="uid://78ov46o41bqo" path="res://scenes/normal_hallway.tscn" id="1_v548x"]
+[ext_resource type="PackedScene" uid="uid://c8ks0xubn3mq3" path="res://scenes/small_chair.tscn" id="2_quhij"]
 
 [node name="NormalHallway" instance=ExtResource("1_v548x")]
 
 [node name="Chair" parent="Props/Chairs" index="0"]
-transform = Transform3D(1.43301e-13, -3.27835e-06, 75, -75, -3.27835e-06, 1.67153e-20, 3.27835e-06, -75, -3.27835e-06, -5.4, -7.45058e-09, -0.1)
+transform = Transform3D(1, 0, -2.11758e-22, 0, 1, 0, 2.11758e-22, 0, 1, -5.2, 0.5, -0.1)
+visible = false
 
 [node name="Chair2" parent="Props/Chairs" index="1"]
-transform = Transform3D(1.43301e-13, -3.27835e-06, 75, -75, -3.27835e-06, 1.67153e-20, 3.27835e-06, -75, -3.27835e-06, -5.4, -7.45058e-09, -12.3)
+transform = Transform3D(1, 5.96046e-08, -2.11758e-22, -5.96046e-08, 1, 1.26218e-29, 2.11758e-22, -7.52316e-37, 1, -5.2, 0.5, -12.3)
+visible = false
 
 [node name="Chair3" parent="Props/Chairs" index="2"]
-transform = Transform3D(1.43301e-13, -3.27835e-06, 75, -75, -3.27835e-06, 1.67153e-20, 3.27835e-06, -75, -3.27835e-06, -5.4, -7.45058e-09, -13.1)
+visible = false
 
 [node name="Chair4" parent="Props/Chairs" index="3"]
-transform = Transform3D(1.43301e-13, -3.27835e-06, 75, -75, -3.27835e-06, 1.67153e-20, 3.27835e-06, -75, -3.27835e-06, -5.4, -7.45058e-09, -13.9)
+visible = false
+
+[node name="SmallChair" parent="Props/Chairs" index="4" instance=ExtResource("2_quhij")]
+transform = Transform3D(1, 0, -2.11758e-22, 0, 1, 0, 2.11758e-22, 0, 1, -5.4, 0.1, -0.1)
+
+[node name="SmallChair2" parent="Props/Chairs" index="5" instance=ExtResource("2_quhij")]
+transform = Transform3D(1, 5.96046e-08, -2.11758e-22, -5.96046e-08, 1, 1.26218e-29, 2.11758e-22, -7.52316e-37, 1, -5.4, 0.1, -12.3)
+
+[node name="SmallChair3" parent="Props/Chairs" index="6" instance=ExtResource("2_quhij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0.1, -13.1)
+
+[node name="SmallChair4" parent="Props/Chairs" index="7" instance=ExtResource("2_quhij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0.1, -13.9)
