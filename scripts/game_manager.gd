@@ -23,6 +23,7 @@ extends Node
     preload("res://scenes/two_chairs_hallway.tscn"),
     preload("res://scenes/lights_out_hallway.tscn"),
     preload("res://scenes/door_knock_hallway.tscn"),
+    preload("res://scenes/thrown_chair_hallway.tscn"),
 ]
 
 # The path to your "You Win!" screen.
