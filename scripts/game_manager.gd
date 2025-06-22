@@ -35,7 +35,7 @@ extends Node
 
 # The probability (from 0.0 to 1.0) of an anomaly spawning.
 # 0.5 means a 50% chance.
-@export var anomaly_chance: float = 0.65
+@export var anomaly_chance: float = 0.7
 
 
 ## --- INTERNAL VARIABLES ---
