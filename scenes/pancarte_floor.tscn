@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://p1p1i416j5mt"]
+
+[node name="PancarteFloor" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+size = Vector3(0.8, 0.0214844, 0.3)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.45, -0.142748)
+size = Vector3(0.8, 0.0214844, 0.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.45, 0.137603)
+size = Vector3(0.8, 0.0214844, 0.1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-3.83181e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 0.876615, -4.37114e-08, 1.91069e-15, -0.390729, -0.45, -0.00534742)
+size = Vector3(0.3, 0.0214844, 0.1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-3.83181e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 0.876615, -4.37114e-08, 1.91069e-15, 0.389638, -0.45, -0.00534742)
+size = Vector3(0.3, 0.0214844, 0.1)

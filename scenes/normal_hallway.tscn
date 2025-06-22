@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=4 uid="uid://78ov46o41bqo"]
+[gd_scene load_steps=36 format=3 uid="uid://78ov46o41bqo"]
 
 [ext_resource type="PackedScene" uid="uid://br4h2pomgq62v" path="res://scenes/ceiling_light.tscn" id="1_i78qv"]
 [ext_resource type="Texture2D" uid="uid://cc8omtwqenel1" path="res://assets/models/Wall Texture/Plaster.001.png" id="1_yvarb"]
 [ext_resource type="Texture2D" uid="uid://5hbm1ms4fn0o" path="res://assets/models/Ceiling Texture/Office_Ceiling.jpg" id="2_cmxom"]
+[ext_resource type="PackedScene" uid="uid://p1p1i416j5mt" path="res://scenes/pancarte_floor.tscn" id="2_hohs6"]
 [ext_resource type="AudioStream" uid="uid://crgrq4xblv0rb" path="res://assets/sounds/light-buzz-sound.mp3" id="2_otibj"]
 [ext_resource type="PackedScene" uid="uid://cqlnrxf85c0ad" path="res://scenes/locker.tscn" id="3_cmxom"]
 [ext_resource type="PackedScene" uid="uid://c6ndmej0ls0ok" path="res://scenes/door.tscn" id="5_otibj"]
@@ -49,16 +50,8 @@ data = PackedVector3Array(-0.076233, -1.89676, 13.25, -0.076233, -1.89676, -13.2
 albedo_texture = ExtResource("1_yvarb")
 uv1_triplanar = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_c8e43"]
-_surfaces = [{
-"aabb": AABB(-0.076233, -1.89676, -13.05, 0.152466, 3.79352, 26.1),
-"attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
-"format": 34359738391,
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 36,
-"vertex_data": PackedByteArray("DCCcvQjJ8r/NzFBBDCCcvQjJ8r/NzFDBDCCcvQjJ8j/NzFDBDCCcPQjJ8r/NzFDBDCCcvQjJ8r/NzFDBDCCcvQjJ8r/NzFBBDCCcvQjJ8j/NzFDBDCCcvQjJ8r/NzFDBDCCcPQjJ8r/NzFDBDCCcvQjJ8j/NzFDBDCCcvQjJ8j/NzFBBDCCcvQjJ8r/NzFBBDCCcvQjJ8r/NzFBBDCCcvQjJ8j/NzFBBDCCcPQjJ8j/NzFBBDCCcPQjJ8j/NzFBBDCCcvQjJ8j/NzFBBDCCcvQjJ8j/NzFDBDCCcvQjJ8r/NzFBBDCCcPQjJ8r/NzFBBDCCcPQjJ8r/NzFDBDCCcPQjJ8j/NzFBBDCCcPQjJ8r/NzFBBDCCcvQjJ8r/NzFBBDCCcPQjJ8r/NzFDBDCCcPQjJ8r/NzFBBDCCcPQjJ8j/NzFBBDCCcPQjJ8r/NzFDBDCCcPQjJ8j/NzFDBDCCcvQjJ8j/NzFDBDCCcvQjJ8j/NzFDBDCCcPQjJ8j/NzFDBDCCcPQjJ8j/NzFBBDCCcPQjJ8j/NzFBBDCCcPQjJ8j/NzFDBDCCcPQjJ8r/NzFDBAAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
-}]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dq6ot"]
+data = PackedVector3Array(-0.076233, -1.89676, 13.05, -0.076233, -1.89676, -13.05, -0.076233, 1.89676, -13.05, 0.076233, -1.89676, -13.05, -0.076233, -1.89676, -13.05, -0.076233, -1.89676, 13.05, -0.076233, 1.89676, -13.05, -0.076233, -1.89676, -13.05, 0.076233, -1.89676, -13.05, -0.076233, 1.89676, -13.05, -0.076233, 1.89676, 13.05, -0.076233, -1.89676, 13.05, -0.076233, -1.89676, 13.05, -0.076233, 1.89676, 13.05, 0.076233, 1.89676, 13.05, 0.076233, 1.89676, 13.05, -0.076233, 1.89676, 13.05, -0.076233, 1.89676, -13.05, -0.076233, -1.89676, 13.05, 0.076233, -1.89676, 13.05, 0.076233, -1.89676, -13.05, 0.076233, 1.89676, 13.05, 0.076233, -1.89676, 13.05, -0.076233, -1.89676, 13.05, 0.076233, -1.89676, -13.05, 0.076233, -1.89676, 13.05, 0.076233, 1.89676, 13.05, 0.076233, -1.89676, -13.05, 0.076233, 1.89676, -13.05, -0.076233, 1.89676, -13.05, -0.076233, 1.89676, -13.05, 0.076233, 1.89676, -13.05, 0.076233, 1.89676, 13.05, 0.076233, 1.89676, 13.05, 0.076233, 1.89676, -13.05, 0.076233, -1.89676, -13.05)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqj6r"]
 albedo_texture = ExtResource("1_yvarb")
@@ -168,9 +161,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.852
 material_override = SubResource("StandardMaterial3D_c8e43")
 size = Vector3(0.152466, 3.79352, 26.1)
 
-[node name="CSGBakedMeshInstance3D4" type="MeshInstance3D" parent="Geometry/Walls"]
+[node name="CSGBakedCollisionShape3D4" type="CollisionShape3D" parent="Geometry/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.8524, 1.48858, 13.744)
-mesh = SubResource("ArrayMesh_c8e43")
+shape = SubResource("ConcavePolygonShape3D_dq6ot")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Geometry/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30.9524, 1.48858, 22.294)
@@ -297,18 +290,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 0.5, -13.9)
 [node name="Door" parent="Props" instance=ExtResource("5_otibj")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.71236, -0.1, 7.2)
 
+[node name="PancarteFloor" parent="." instance=ExtResource("2_hohs6")]
+transform = Transform3D(1.285, 0, 0, 0, -5.61691e-08, -1.285, 0, 1.285, -5.61691e-08, 6.45546, 1.88612, 14.455)
+
 [node name="LevelTextHint" type="Label3D" parent="."]
-transform = Transform3D(1, -1.31134e-07, 4.37114e-08, 1.31134e-07, 1, 8.74228e-08, -4.37114e-08, -8.74228e-08, 1, 6.4705, 1.9, 13.8222)
-text = "001"
+transform = Transform3D(1, -1.31134e-07, 4.37114e-08, 1.31134e-07, 1, 8.74228e-08, -4.37114e-08, -8.74228e-08, 1, 6.4705, 1.9, 13.8965)
+text = "Floor 0"
 font_size = 48
 outline_size = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="LevelTextHint"]
-transform = Transform3D(1, 1.80322e-14, 3.55271e-15, 3.82137e-15, 1, 0, 0, 0, 1, 0, 0, 0.00348091)
+transform = Transform3D(1, 3.82137e-15, -1.06581e-14, 3.82137e-15, 1, 7.10543e-15, 0, 0, 1, 0, 0, 0.0203772)
 light_color = Color(0.752754, 0.702261, 0.441277, 1)
-light_energy = 0.2
-omni_range = 0.5
-omni_attenuation = 0.84
+light_energy = 0.1
+omni_range = 0.531
+omni_attenuation = 0.17
 
 [node name="Triggers" type="Node3D" parent="."]
 transform = Transform3D(-0.0106027, 0, -1.49996, 0, 1.5, 0, 1.49996, 0, -0.0106027, 4.47683, 0.794107, -3.49458)
@@ -328,7 +324,7 @@ transform = Transform3D(1, 0, 9.0804e-08, 0, 1.00002, 0, -9.0804e-08, 0, 1, -0.1
 shape = SubResource("BoxShape3D_wpcjn")
 
 [node name="SpawnPoint" type="Marker3D" parent="Triggers"]
-transform = Transform3D(-1, 0, -8.84756e-08, 0, 1, 0, 8.84756e-08, 0, -1, 12.8484, -0.778693, -3.30631)
+transform = Transform3D(-1, 0, -8.89413e-08, 0, 1, 0, 8.89413e-08, 0, -1, 12.8479, -0.778693, -3.37297)
 
 [node name="DirectionText" type="Label3D" parent="."]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -5.63919, 1.66662, -7.09338)
