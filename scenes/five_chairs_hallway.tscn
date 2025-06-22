@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cebbwm4oa6wtm"]
+
+[ext_resource type="PackedScene" uid="uid://78ov46o41bqo" path="res://scenes/normal_hallway.tscn" id="1_7pc21"]
+[ext_resource type="PackedScene" uid="uid://2yrxtx8s8wmk" path="res://scenes/chair.tscn" id="2_7g6ri"]
+
+[node name="FiveChairsHallway" instance=ExtResource("1_7pc21")]
+
+[node name="Chair5" parent="Props/Chairs" index="4" instance=ExtResource("2_7g6ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 0.5, -14.7)
