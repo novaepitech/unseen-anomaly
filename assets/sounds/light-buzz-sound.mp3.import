@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2ef560068623fadf4792d57590af82dd645d5d4a7b517b4ac0dc7dc030765ff
-size 391
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crgrq4xblv0rb"
+path="res://.godot/imported/light-buzz-sound.mp3-e3feb103461c9cb4ef5759123717ff4d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/light-buzz-sound.mp3"
+dest_files=["res://.godot/imported/light-buzz-sound.mp3-e3feb103461c9cb4ef5759123717ff4d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
