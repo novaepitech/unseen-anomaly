@@ -20,7 +20,8 @@ extends Node
     preload("res://scenes/two_lockers_hallway.tscn"),
     preload("res://scenes/no_sound_hallway.tscn"),
     preload("res://scenes/small_chairs_hallway.tscn"),
-    preload("res://scenes/two_chairs_hallway.tscn")
+    preload("res://scenes/two_chairs_hallway.tscn"),
+    preload("res://scenes/lights_out_hallway.tscn"),
 ]
 
 # The path to your "You Win!" screen.
@@ -31,7 +32,7 @@ extends Node
 
 # The probability (from 0.0 to 1.0) of an anomaly spawning.
 # 0.5 means a 50% chance.
-@export var anomaly_chance: float = 0.6
+@export var anomaly_chance: float = 0.65
 
 
 ## --- INTERNAL VARIABLES ---

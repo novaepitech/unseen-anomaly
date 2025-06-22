@@ -8,8 +8,20 @@
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0745731, 3.62945, -10.3771)
 size = Vector3(0.152466, 56.1, 95.6)
 
+[node name="light" parent="Props/Lights" index="0"]
+visible = true
+
 [node name="Light-buzz-sound" parent="Props/Lights" index="1"]
 autoplay = false
 
+[node name="light4" parent="Props/Lights" index="2"]
+visible = true
+
+[node name="light2" parent="Props/Lights" index="3"]
+visible = true
+
 [node name="Light-buzz-sound2" parent="Props/Lights" index="4"]
 autoplay = false
+
+[node name="light3" parent="Props/Lights" index="5"]
+visible = true
