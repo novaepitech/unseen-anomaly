@@ -48,6 +48,9 @@ var current_loop_counter: int = 0
 var is_handling_choice: bool = false
 var tutorial_shown: bool = false
 
+# Pity timer: tracks consecutive normal loops to force anomalies
+var normal_loops_in_a_row: int = 0
+
 
 # Called once when the AutoLoad is initialized at the start of the game.
 func _ready():
@@ -93,7 +96,14 @@ func start_new_loop():
         if current_loop_counter == 0:
             current_loop_is_anomalous = false
         else:
-            current_loop_is_anomalous = randf() < anomaly_chance
+            # Pity timer: Force anomaly after 2 normal loops, or use random chance
+            current_loop_is_anomalous = normal_loops_in_a_row >= 2 or randf() < anomaly_chance
+
+        # Update pity timer tracking
+        if current_loop_is_anomalous:
+            normal_loops_in_a_row = 0  # Reset counter when showing an anomaly
+        else:
+            normal_loops_in_a_row += 1  # Increment counter for normal loops
 
         if current_loop_is_anomalous:
             # Don't pick the same anomaly twice in a row
