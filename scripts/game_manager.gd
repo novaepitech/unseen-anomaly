@@ -138,7 +138,7 @@ func start_new_loop():
 	# FIXED: Proper teleportation that prevents camera stutter
 	teleport_player_to_spawn(spawn_point)
 
-	var level_text_hint = current_loop_instance.get_node("Props/Door/LevelTextHint")
+	var level_text_hint = current_loop_instance.get_node("LevelTextHint")
 	level_text_hint.text = str(current_loop_counter) + "01"
 
 
