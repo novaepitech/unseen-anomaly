@@ -56,6 +56,14 @@ var tutorial_shown: bool = false
 var normal_loops_in_a_row: int = 0
 
 
+# Resets the game state variables to their initial values.
+func reset_game_state():
+    current_loop_counter = 0
+    previous_anomaly_scene = null
+    normal_loops_in_a_row = 0
+    is_handling_choice = false # Ensure the choice handler is unlocked for a new game
+    print("GameManager state reset.")
+
 # Called once when the AutoLoad is initialized at the start of the game.
 func _ready():
     # The GameManager is now ready, but it doesn't know about the player yet.

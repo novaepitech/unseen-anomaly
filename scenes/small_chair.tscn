@@ -7,5 +7,5 @@
 [node name="Chair" parent="." index="0"]
 transform = Transform3D(1.43302e-13, -3.27835e-06, 75, -75, -3.27835e-06, 3.78115e-19, 3.27835e-06, -75, -3.27835e-06, 0, 0, 0)
 
-[node name="CollisionShape3D" parent="." index="1"]
+[node name="CollisionShape3D" parent="." index="10"]
 transform = Transform3D(1.43302e-13, -3.27835e-06, 75, -75, -3.27835e-06, 3.78115e-19, 3.27835e-06, -75, -3.27835e-06, 0, 0, 0)
