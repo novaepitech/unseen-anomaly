@@ -59,6 +59,9 @@ func _ready() -> void:
     look_rotation.x = head.rotation.x
     GameManager.register_player(self)
 
+    # Immediately capture the mouse when the player is ready.
+    capture_mouse()
+
 func _unhandled_input(event: InputEvent) -> void:
     # Mouse capturing
     if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
