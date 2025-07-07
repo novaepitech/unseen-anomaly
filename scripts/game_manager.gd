@@ -22,7 +22,7 @@ extends Node
 
 @export var win_scene_path: String = "res://scenes/win_screen.tscn"
 @export var loops_to_win: int = 8
-@export var anomaly_chance: float = 0.7
+@export var anomaly_chance: float = 0.6
 
 
 ## --- INTERNAL VARIABLES ---
