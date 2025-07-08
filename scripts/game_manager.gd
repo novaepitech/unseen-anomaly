@@ -10,13 +10,6 @@ extends Node
 @export var normal_scene: PackedScene = preload("res://scenes/normal_hallway.tscn")
 
 @export var anomaly_scenes: Array[PackedScene] = [
-    preload("res://scenes/two_lockers_hallway.tscn"),
-    preload("res://scenes/no_sound_hallway.tscn"),
-    preload("res://scenes/small_chairs_hallway.tscn"),
-    preload("res://scenes/two_chairs_hallway.tscn"),
-    preload("res://scenes/five_chairs_hallway.tscn"),
-    preload("res://scenes/lights_out_hallway.tscn"),
-    preload("res://scenes/door_knock_hallway.tscn"),
     preload("res://scenes/thrown_chair_hallway.tscn"),
 ]
 
@@ -35,14 +28,14 @@ var is_handling_choice: bool = false
 var tutorial_shown: bool = false
 var normal_loops_in_a_row: int = 0
 
-# NEW: Tracks all anomalies seen in the current playthrough to prevent any repeats.
+# Tracks all anomalies seen in the current playthrough to prevent any repeats.
 var seen_anomalies: Array[PackedScene] = []
 
 
 # Resets the game state variables to their initial values.
 func reset_game_state():
     current_loop_counter = 0
-    seen_anomalies.clear() # NEW: Clear the list of seen anomalies
+    seen_anomalies.clear() # Clear the list of seen anomalies
     normal_loops_in_a_row = 0
     is_handling_choice = false
     print("GameManager state reset.")
@@ -90,23 +83,18 @@ func start_new_loop():
             normal_loops_in_a_row += 1
 
         if current_loop_is_anomalous:
-            # --- NEW: Improved Anomaly Selection Logic ---
-            # 1. Create a list of anomalies the player has NOT yet seen.
             var available_anomalies = []
             for scene in anomaly_scenes:
                 if not scene in seen_anomalies:
                     available_anomalies.append(scene)
 
-            # 2. If all anomalies have been seen, reset the list to allow repeats.
             if available_anomalies.is_empty():
                 print("All unique anomalies shown. Resetting pool.")
                 seen_anomalies.clear()
                 available_anomalies = anomaly_scenes.duplicate()
 
-            # 3. Pick a random anomaly from the available (unseen) ones.
             scene_to_load = available_anomalies.pick_random()
 
-            # 4. Add the chosen anomaly to our list of seen anomalies for this playthrough.
             seen_anomalies.append(scene_to_load)
         else:
             scene_to_load = normal_scene
@@ -172,7 +160,7 @@ func handle_player_choice(went_forward: bool):
     else:
         current_loop_counter = 0
         normal_loops_in_a_row = 0
-        seen_anomalies.clear() # NEW: Reset seen anomalies on incorrect choice.
+        seen_anomalies.clear() # Reset seen anomalies on incorrect choice.
         print("Incorrect! Streak reset to 0.")
         start_new_loop()
 

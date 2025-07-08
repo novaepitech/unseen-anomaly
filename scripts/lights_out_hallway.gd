@@ -1,35 +1,31 @@
 extends Node3D
 
-# On utilise @onready pour s'assurer que les noeuds existent avant d'y accéder.
-# Le signe "$" est un raccourci pour get_node().
+# @onready ensures that nodes are available before access.
 
 @onready var lights_container = $Props/Lights
 @onready var lights_out_trigger = $LightsOutTrigger
 
 func _ready():
-    # On connecte le signal du trigger à notre fonction qui va éteindre les lumières.
-    # On s'assure de n'appeler la fonction qu'une seule fois avec .bind(true).
-    # Le .bind(true) permet de passer une information supplémentaire à la fonction connectée.
-    # Ici, on l'utilise pour désactiver le trigger après le premier passage.
+    # Connect the trigger's signal to our function to turn off the lights.
+    # We use .bind(true) to pass an argument and ensure the function is called only once,
+    # by disabling the trigger after the first use.
     lights_out_trigger.body_entered.connect(_on_player_entered.bind(true))
 
 
 func _on_player_entered(body, disable_after_use: bool):
-    # On vérifie que c'est bien le joueur. On suppose que le joueur a un script ou un nom spécifique.
-    # Le plus propre est de lui donner une "class_name" dans son script, ex: "class_name Player"
-    if body is CharacterBody3D: # Remplacez par votre classe de joueur si besoin.
-        
-        # On parcourt toutes les lumières dans le conteneur "Lumieres".
+    # Ensure the body is the player. A "class_name Player" in the player script is recommended.
+    if body is CharacterBody3D: # Replace with your player class if needed.
+
+        # Iterate through all nodes in the lights container.
         for node in lights_container.get_children():
-            # On vérifie que le noeud est bien une lumière avant d'essayer de l'éteindre.
+            # Ensure the node is a light before trying to turn it off.
             if node is not AudioStreamPlayer3D:
-                node.visible = false # On éteint la lumière.
+                node.visible = false # Turn off the light.
             else:
                 node.stop()
             $Props/Lights/LightsOutSound.play()
 
-        # Si on a demandé de désactiver le trigger après usage, on le fait.
-        # Cela empêche les lumières de se "rallumer" ou le code de s'exécuter à nouveau
-        # si le joueur fait des allers-retours dans la zone.
+        # If requested, disable the trigger after use to prevent the lights from turning "on again"
+        # or the code from re-executing if the player moves back and forth in the area.
         if disable_after_use:
             lights_out_trigger.get_node("CollisionShape3D").disabled = true

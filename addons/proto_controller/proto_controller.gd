@@ -3,6 +3,7 @@
 # Intended for rapid prototyping of first-person games.
 # Happy prototyping!
 
+class_name ProtoController
 extends CharacterBody3D
 
 ## Can we move around?
@@ -49,6 +50,10 @@ var look_rotation : Vector2
 var move_speed : float = 0.0
 var freeflying : bool = false
 
+# --- NOUVELLE VARIABLE ---
+## Est-on dans un événement cinématique qui bloque les contrôles ?
+var is_in_cinematic : bool = false
+
 ## IMPORTANT REFERENCES
 @onready var head: Node3D = $Head
 @onready var collider: CollisionShape3D = $Collider
@@ -63,6 +68,11 @@ func _ready() -> void:
     capture_mouse()
 
 func _unhandled_input(event: InputEvent) -> void:
+    # --- MISE À JOUR ---
+    # Si on est en cinématique, on ignore tous les inputs.
+    if is_in_cinematic:
+        return
+
     # Mouse capturing
     if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
         capture_mouse()
@@ -81,6 +91,14 @@ func _unhandled_input(event: InputEvent) -> void:
             disable_freefly()
 
 func _physics_process(delta: float) -> void:
+    # --- MISE À JOUR ---
+    # Si on est en cinématique, on bloque tout mouvement physique.
+    if is_in_cinematic:
+        # On s'assure que le joueur s'arrête net.
+        velocity = Vector3.ZERO
+        move_and_slide()
+        return
+
     # If freeflying, handle freefly and nothing else
     if can_freefly and freeflying:
         var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
@@ -101,7 +119,7 @@ func _physics_process(delta: float) -> void:
 
     # Modify speed based on sprinting
     if can_sprint and Input.is_action_pressed(input_sprint):
-            move_speed = sprint_speed
+        move_speed = sprint_speed
     else:
         move_speed = base_speed
 
@@ -116,8 +134,9 @@ func _physics_process(delta: float) -> void:
             velocity.x = move_toward(velocity.x, 0, move_speed)
             velocity.z = move_toward(velocity.z, 0, move_speed)
     else:
+        # On annule la vélocité si le mouvement n'est pas permis.
         velocity.x = 0
-        velocity.y = 0
+        velocity.z = 0 # On conserve la vélocité y pour la gravité/saut.
 
     # Use velocity to actually move
     move_and_slide()
@@ -136,7 +155,46 @@ func rotate_look(rot_input : Vector2):
     head.rotate_x(look_rotation.x)
 
 
-# --- NEW FUNCTION ---
+# --- NOUVELLES FONCTIONS CINÉMATIQUES ---
+
+## Démarre un événement cinématique, bloquant tous les contrôles du joueur.
+func start_cinematic():
+    is_in_cinematic = true
+
+## Termine un événement cinématique, rendant le contrôle au joueur.
+func end_cinematic():
+    is_in_cinematic = false
+    # On s'assure que la souris est recapturée à la fin de la cinématique.
+    capture_mouse()
+
+## Force la caméra à regarder une position dans le monde.
+## Retourne le Tween pour pouvoir attendre la fin de l'animation avec "await".
+func force_look_at(target_position: Vector3, duration: float) -> Tween:
+    # On calcule la direction vers la cible depuis la tête du joueur.
+    var direction_to_target = head.global_position.direction_to(target_position)
+
+    # On calcule les angles de lacet (yaw) et de tangage (pitch) nécessaires.
+    # Lacet (rotation Y) : atan2 est parfait pour ça.
+    var target_yaw = atan2(-direction_to_target.x, -direction_to_target.z)
+    # Tangage (rotation X) : asin sur la composante Y.
+    var target_pitch = asin(direction_to_target.y)
+
+    # On crée un Tween pour une rotation douce mais rapide.
+    var tween = create_tween()
+    tween.set_parallel(true) # On veut que les rotations Y et X se fassent en même temps.
+    tween.set_trans(Tween.TRANS_QUINT) # Une transition douce au début et à la fin.
+    tween.set_ease(Tween.EASE_OUT)
+
+    # On anime la rotation Y du corps du joueur.
+    tween.tween_property(self, "rotation:y", target_yaw, duration)
+    # On anime la rotation X de la tête du joueur.
+    tween.tween_property(head, "rotation:x", target_pitch, duration)
+
+    # IMPORTANT: Une fois la rotation terminée, on doit synchroniser nos variables internes.
+    tween.finished.connect(sync_rotation)
+
+    return tween
+
 ## Call this after teleporting to sync internal rotation with the node's transform.
 func sync_rotation():
     # The body's Y rotation (left/right look)
