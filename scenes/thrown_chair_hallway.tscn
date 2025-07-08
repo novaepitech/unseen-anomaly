@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bml31qce7cee6"]
+[gd_scene load_steps=5 format=3 uid="uid://bml31qce7cee6"]
 
 [ext_resource type="PackedScene" uid="uid://78ov46o41bqo" path="res://scenes/normal_hallway.tscn" id="1_ctu20"]
 [ext_resource type="Script" uid="uid://ddlcobg4pw5h7" path="res://scripts/thrown_chair_hallway.gd" id="2_ev4po"]
+[ext_resource type="AudioStream" uid="uid://cn8h55q0g1nbj" path="res://assets/sounds/violin.mp3" id="3_ts8nh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ts8nh"]
 size = Vector3(10.6, 3.6, 0.2)
 
 [node name="ThrownChairHallway" instance=ExtResource("1_ctu20")]
 script = ExtResource("2_ev4po")
+
+[node name="ThrowSound" type="AudioStreamPlayer3D" parent="Props/Chairs/Chair2" index="11"]
+stream = ExtResource("3_ts8nh")
+volume_db = -5.0
 
 [node name="ThrownChairTrigger" type="Area3D" parent="." index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.3)
