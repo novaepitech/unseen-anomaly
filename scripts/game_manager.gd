@@ -10,6 +10,13 @@ extends Node
 @export var normal_scene: PackedScene = preload("res://scenes/normal_hallway.tscn")
 
 @export var anomaly_scenes: Array[PackedScene] = [
+    preload("res://scenes/two_lockers_hallway.tscn"),
+    preload("res://scenes/no_sound_hallway.tscn"),
+    preload("res://scenes/small_chairs_hallway.tscn"),
+    preload("res://scenes/two_chairs_hallway.tscn"),
+    preload("res://scenes/five_chairs_hallway.tscn"),
+    preload("res://scenes/lights_out_hallway.tscn"),
+    preload("res://scenes/door_knock_hallway.tscn"),
     preload("res://scenes/thrown_chair_hallway.tscn"),
 ]
 
